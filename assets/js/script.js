@@ -10,6 +10,7 @@ var optionBox = document.querySelector("#option-box");
 
 var secondsLeft = 30;
 var qIndex = 0;
+var currentScore = 0;
 var timerIntervalId;
 
 startGameBtn.onclick = start
@@ -18,9 +19,14 @@ playAgainBtn.onclick = start
 function start() {
   secondsLeft = 30;
   qIndex = 0;
+  currentScore = 0;
+  // write score to page
+  userScore.textContent = currentScore;
 
   startScreen.classList.add("hide")
   quizContent.classList.remove("hide")
+  postGameScreen.classList.add("hide");
+
   // display first question
   displayQuestion(qIndex);
 
@@ -64,9 +70,10 @@ function displayQuestion() {
 function answerTheQuestion() {
   if(this.value === questions[qIndex].answer){
     console.log("Correct")
-    secondsLeft += 5
+    // secondsLeft += 5
+    currentScore++;
   } else {
-    secondsLeft -= 5
+    // secondsLeft -= 5
     console.log("Incorrect!")
   }
 
@@ -77,13 +84,11 @@ function answerTheQuestion() {
 function stopGame() {
   console.log("Game Over!")
   clearInterval(timerIntervalId);
+  // alert("Final Score ");
   quizContent.classList.add("hide");
   postGameScreen.classList.remove("hide");
+  userScore.textContent = currentScore;
 }
-
-
-
-
 
 
 // create function to handle users answering
