@@ -16,6 +16,9 @@ startGameBtn.onclick = start
 playAgainBtn.onclick = start
 
 function start() {
+  secondsLeft = 30;
+  qIndex = 0;
+
   startScreen.classList.add("hide")
   quizContent.classList.remove("hide")
   // display first question
@@ -74,8 +77,8 @@ function answerTheQuestion() {
 function stopGame() {
   console.log("Game Over!")
   clearInterval(timerIntervalId);
-  quizContent.classList.add("hide")
-  postGameScreen.classList.remove("hide")
+  quizContent.classList.add("hide");
+  postGameScreen.classList.remove("hide");
 }
 
 
