@@ -11,9 +11,9 @@ var questions = [
 
   },
   {
-    question: "Are Georgian Christian Orthodox?",
+    question: "Are Georgians Christian Orthodox?",
     choices: ["True", "False"],
-    answer: "True."
+    answer: "True"
   }
 ];
 

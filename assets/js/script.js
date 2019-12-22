@@ -53,7 +53,7 @@ function displayQuestion() {
     return stopGame();
   }
 
-  questionLine.textContent = q.question;
+  questionLine.textContent = q.questions;
   console.log(q)
   optionBox.innerHTML = "";
   for (var i = 0; i < q.choices.length; i++) {
