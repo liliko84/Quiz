@@ -53,7 +53,7 @@ function displayQuestion() {
     return stopGame();
   }
 
-  questionLine.textContent = q.questions;
+  questionLine.textContent = q.question;
   console.log(q)
   optionBox.innerHTML = "";
   for (var i = 0; i < q.choices.length; i++) {
@@ -68,7 +68,7 @@ function displayQuestion() {
 }
 
 function answerTheQuestion() {
-  if(this.value === questions[qIndex].answer){
+  if (this.value === questions[qIndex].answer) {
     console.log("Correct")
     // secondsLeft += 5
     currentScore++;
